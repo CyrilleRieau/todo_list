@@ -41,7 +41,7 @@
             <input type="submit" value="Submit" />
         </form>
     </article>
-    <article>
+    <article id="partie2">
         <h2>List</h2>
         <section id="creation">
         </section>
@@ -54,16 +54,17 @@
         let body = document.body;
         let creation = document.querySelector("#creation");
         let listing = document.querySelector("#listing");
+        let arti = document.querySelector("#partie2");
         form.addEventListener("submit", function(recup) {
             recup.preventDefault();
             console.log(title.value);
             console.log(comment.value);
 
-            let uler = "<li class='titre'>" +
-                "<p>" + title.value + "</p>" +
+            let uler = "<li id='titre'>" +
+                "<p><input type='checkbox' />" + title.value + "</p>" +
                 "</li>" +
-                "<li class='soustitre'>" +
-                "<p>" + comment.value + "</p>" +
+                "<li id='soustitre'>" +
+                "<p><input type='checkbox' />" + comment.value + "</p>" +
                 "</li>";
 
             let ajout = document.createElement("ul");
@@ -72,12 +73,41 @@
             let button = document.createElement("button");
             button.textContent = "Effacer";
 
-            ajout.appendChild(button);
+            let button1 = document.createElement("button");
+            button1.textContent = "Effacer";
+            let button2 = document.createElement("button");
+            button2.textContent = "Effacer";
+            let titre = ajout.querySelector("#titre");
+            let soustitre = ajout.querySelector("#soustitre");
+
+            titre.appendChild(button1);
+            soustitre.appendChild(button2);
             creation.appendChild(ajout);
+            ajout.appendChild(button);
+            button1.addEventListener("click", function(effac) {
+                ajout.removeChild(titre);
+            });
+
+            button2.addEventListener("click", function(effar) {
+                ajout.removeChild(soustitre);
+            });
 
             button.addEventListener("click", function(effa) {
                 creation.removeChild(ajout);
-            })
+            });
+
+            titre.addEventListener("dblclick", function(modif) {
+                modif.preventDefault();
+                let newtitle = prompt("Rentrez une nouvelle valeur");
+                title.value.append(newtitle.value);
+            });
+            soustitre.addEventListener("dblclick", function(modif) {
+                modif.preventDefault();
+                let newsubtitle = prompt("Rentrez une nouvelle valeur", "");
+                console.log(newsubtitle);
+                comment.textContent = newsubtitle.value;
+                //marche avec contentEditable;
+            });
         });
     </script>
 </body>
