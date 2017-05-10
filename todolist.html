@@ -11,13 +11,13 @@
             list-style-type: none;
         }
         
-        .titre {
+        #titre {
             font-size: 1.6em;
             margin: 0;
             padding: 0;
         }
         
-        .soustitre {
+        #soustitre {
             margin-left: 50px;
             padding: 0;
             margin-top: -20px;
@@ -56,58 +56,58 @@
         let listing = document.querySelector("#listing");
         let arti = document.querySelector("#partie2");
         form.addEventListener("submit", function(recup) {
-            recup.preventDefault();
-            console.log(title.value);
-            console.log(comment.value);
+        recup.preventDefault();
+        console.log(title.value);
+        console.log(comment.value);
 
-            let uler = "<li id='titre'>" +
-                "<p><input type='checkbox' />" + title.value + "</p>" +
-                "</li>" +
-                "<li id='soustitre'>" +
-                "<p><input type='checkbox' />" + comment.value + "</p>" +
-                "</li>";
+        let uler = "<li id='titre'>" +
+            "<p><input type='checkbox' />" + title.value + "</p>" +
+            "</li>" +
+            "<li id='soustitre'>" +
+            "<p><input type='checkbox' />" + comment.value + "</p>" +
+            "</li>";
 
-            let ajout = document.createElement("ul");
-            ajout.innerHTML = uler;
+        let ajout = document.createElement("ul");
+        ajout.innerHTML = uler;
 
-            let button = document.createElement("button");
-            button.textContent = "Effacer";
+        let button = document.createElement("button");
+        button.textContent = "Effacer";
 
-            let button1 = document.createElement("button");
-            button1.textContent = "Effacer";
-            let button2 = document.createElement("button");
-            button2.textContent = "Effacer";
-            let titre = ajout.querySelector("#titre");
-            let soustitre = ajout.querySelector("#soustitre");
+        let button1 = document.createElement("button");
+        button1.textContent = "Effacer";
+        let button2 = document.createElement("button");
+        button2.textContent = "Effacer";
+        let titre = ajout.querySelector("#titre");
+        let soustitre = ajout.querySelector("#soustitre");
 
-            titre.appendChild(button1);
-            soustitre.appendChild(button2);
-            creation.appendChild(ajout);
-            ajout.appendChild(button);
-            button1.addEventListener("click", function(effac) {
-                ajout.removeChild(titre);
-            });
+        titre.appendChild(button1);
+        soustitre.appendChild(button2);
+        creation.appendChild(ajout);
+        ajout.appendChild(button);
+        button1.addEventListener("click", function(effac) {
+            ajout.removeChild(titre);
+        });
 
-            button2.addEventListener("click", function(effar) {
-                ajout.removeChild(soustitre);
-            });
+        button2.addEventListener("click", function(effar) {
+            ajout.removeChild(soustitre);
+        });
 
-            button.addEventListener("click", function(effa) {
-                creation.removeChild(ajout);
-            });
+        button.addEventListener("click", function(effa) {
+            creation.removeChild(ajout);
+        });
 
-            titre.addEventListener("dblclick", function(modif) {
-                modif.preventDefault();
-                let newtitle = prompt("Rentrez une nouvelle valeur");
-                title.value.append(newtitle.value);
-            });
-            soustitre.addEventListener("dblclick", function(modif) {
-                modif.preventDefault();
-                let newsubtitle = prompt("Rentrez une nouvelle valeur", "");
-                console.log(newsubtitle);
-                comment.textContent = newsubtitle.value;
-                //marche avec contentEditable;
-            });
+        titre.addEventListener("dblclick", function(modif) {
+            modif.preventDefault();
+            let newtitle = prompt("Rentrez une nouvelle valeur");
+            title.value.append(newtitle.value);
+        });
+        //soustitre.addEventListener("dblclick", function(modif) {
+        //  modif.preventDefault();
+        //let newsubtitle = prompt("Rentrez une nouvelle valeur", "");
+        //console.log(newsubtitle);
+        //comment.textContent = newsubtitle.value;
+        //marche avec contentEditable;
+        });
         });
     </script>
 </body>
