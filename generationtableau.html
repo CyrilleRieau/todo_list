@@ -19,10 +19,10 @@
     </table>
     <script>
         let table = ["Ga", "Bu", "Zo", "Meu"];
+        let tableau = document.querySelector("#tableauhtml");
         for (i = 0; i < table.length; i++) {
             let td = document.createElement('td');
             td.textContent = table[i];
-            let tableau = document.querySelector("#tableauhtml");
             tableau.appendChild(td);
         }
     </script>
