@@ -55,13 +55,7 @@
         let comment = document.querySelector("#comment");
         let title = document.querySelector("#title");
         let creation = document.querySelector("#creation");
-        let sujet = title.value;
-        let objets = comment.value;
-        let todolist = new Array([sujet], [objets]);
 
-        function adddata(arg) {
-            todolist.push(arg);
-        };
         form.addEventListener("submit", function(recup) {
             recup.preventDefault();
             let uler = "<li id='titre'>" +
