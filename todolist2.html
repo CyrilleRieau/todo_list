@@ -20,8 +20,13 @@
         let rajout = function(arg) {
             todolist.push(arg);
         };
+
         let suppression = function(index) {
             todolist.splice(index, 1);
+            //pourquoi supprime pas le 
+            //bouton sélectionné mais 
+            //seulement le premier ????
+            //Problème dans le splice sur le 1 ?
         };
         let liste = document.getElementById('liste');
         let afficherListe = function() {
@@ -34,7 +39,8 @@
                 button.textContent = "Effacer";
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    suppression();
+                    let title = document.querySelector('#title');
+                    suppression(title.value);
                     afficherListe();
                 });
                 li.appendChild(button);
