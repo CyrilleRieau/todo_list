@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoListNew</title>
+</head>
+
+<body>
+    <form action="" id="form1">
+        <input type="text" name="title" id="title" />
+        <input type='submit' value="Submit" />
+    </form>
+    <ul id='liste'>
+    </ul>
+    <script type="text/javascript">
+        let todolist = [];
+        let rajout = function(arg) {
+            todolist.push(arg);
+        };
+        let suppression = function(index) {
+            todolist.splice(index, 1);
+        };
+        let liste = document.getElementById('liste');
+        let afficherListe = function() {
+            liste.innerHTML = "";
+            for (i = 0; i < todolist.length; i++) {
+                let li = document.createElement('li');
+                li.textContent = todolist[i];
+                liste.appendChild(li);
+                let button = document.createElement("button");
+                button.textContent = "Effacer";
+                button.addEventListener('click', function(effac) {
+                    effac.preventDefault();
+                    suppression();
+                    afficherListe();
+                });
+                li.appendChild(button);
+            }
+        };
+        let form = document.querySelector("#form1");
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let title = document.querySelector('#title');
+            rajout(title.value);
+            afficherListe();
+        });
+    </script>
+</body>
+
+</html>
