@@ -32,8 +32,8 @@
                 liste.appendChild(li);
                 let button = document.createElement("button");
                 button.textContent = "Effacer";
-                button.addEventListener('click', function(effac) {
-                    effac.preventDefault();
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
                     suppression();
                     afficherListe();
                 });
