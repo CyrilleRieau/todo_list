@@ -16,6 +16,7 @@
     <ul id='liste'>
     </ul>
     <script type="text/javascript">
+        "use strict";
         let todolist = [];
         let rajout = function(arg) {
             todolist.push(arg);
@@ -23,15 +24,12 @@
 
         let suppression = function(index) {
             todolist.splice(index, 1);
-            //pourquoi supprime pas le 
-            //bouton sélectionné mais 
-            //seulement le premier ????
-            //Problème dans le splice sur le 1 ?
+
         };
         let liste = document.getElementById('liste');
         let afficherListe = function() {
             liste.innerHTML = "";
-            for (i = 0; i < todolist.length; i++) {
+            for (let i = 0; i < todolist.length; i++) {
                 let li = document.createElement('li');
                 li.textContent = todolist[i];
                 liste.appendChild(li);
@@ -39,8 +37,7 @@
                 button.textContent = "Effacer";
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    let title = document.querySelector('#title');
-                    suppression(title.value);
+                    suppression(i);
                     afficherListe();
                 });
                 li.appendChild(button);
