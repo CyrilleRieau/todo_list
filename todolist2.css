@@ -1,0 +1,22 @@
+ body {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ h1 {
+     padding-top: 5px;
+     color: aquamarine;
+     font-family: 'Times New Roman', Times, serif;
+ }
+ 
+ #forumla {
+     background-image: url("fond.jpg");
+     background-size: contain;
+     width: 600px;
+ }
+ 
+ form {
+     padding-bottom: 10px;
+ }
+ 
+ #listaff {}
