@@ -25,19 +25,21 @@
     <script type="text/javascript">
         "use strict";
         let todolist = [];
-        let rajout = function(arg) {
+
+        function rajout(arg) {
             if (todolist.length > 9) {
                 return;
             }
             todolist.push(arg);
         };
 
-        let suppression = function(index) {
+        function suppression(index) {
             todolist.splice(index, 1);
 
         };
         let liste = document.getElementById('liste');
-        let afficherListe = function() {
+
+        function afficherListe() {
             liste.innerHTML = "";
             for (let i = 0; i < todolist.length; i++) {
                 let li = document.createElement('li');
@@ -45,13 +47,13 @@
                 liste.appendChild(li);
                 let button = document.createElement("button");
                 button.textContent = "Effacer";
+                li.appendChild(button);
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
                     suppression(i);
                     afficherListe();
                 });
-                li.appendChild(button);
-            }
+            };
         };
         let form = document.querySelector("#form1");
         form.addEventListener('submit', function(e) {
