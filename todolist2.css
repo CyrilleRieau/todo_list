@@ -4,8 +4,8 @@
  }
  
  h1 {
-     padding-top: 5px;
-     color: aquamarine;
+     padding-left: 10px;
+     color: indigo;
      font-family: 'Times New Roman', Times, serif;
  }
  
@@ -17,6 +17,38 @@
  
  form {
      padding-bottom: 10px;
+     padding-left: 10px;
  }
  
- #listaff {}
+ #listaff {
+     background-image: url("ofndliste.jpg");
+     height: 100vh;
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+ }
+ 
+ h2 {
+     font-size: 2em;
+     padding-left: 10px;
+     color: black;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     text-align: center;
+     margin-left: -10%;
+ }
+ 
+ ul {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 9%;
+ }
+ 
+ li {
+     margin: 8px;
+     margin-left: -6%;
+     padding: 3px;
+     font-size: 1.25em;
+     color: black;
+ }

@@ -11,7 +11,7 @@
 
 <body>
     <article id='forumla'>
-        <h1>Que voulez-vous insérer ?</h1>
+        <h1>Quels sont les 10 cadeaux que tu veux commander ?</h1>
         <form action="" id="form1">
             <input type="text" name="title" id="title" />
             <input type='submit' value="Submit" />
@@ -38,7 +38,7 @@
             liste.innerHTML = "";
             for (let i = 0; i < todolist.length; i++) {
                 let li = document.createElement('li');
-                li.textContent = todolist[i];
+                li.textContent = todolist[i] + " ";
                 liste.appendChild(li);
                 let button = document.createElement("button");
                 button.textContent = "Effacer";
