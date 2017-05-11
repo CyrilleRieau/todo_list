@@ -13,12 +13,12 @@
     <article id='forumla'>
         <h1>Quels sont les 10 cadeaux que tu veux commander ?</h1>
         <form action="" id="form1">
-            <input type="text" name="title" id="title" />
-            <input type='submit' value="Submit" />
+            <input type="text" name="title" id='title' />
+            <input type='submit' value="Envoi" />
         </form>
     </article>
     <article id="listaff">
-        <h2>Liste des éléments insérés</h2>
+        <h2>Liste de cadeaux</h2>
         <ul id='liste'>
         </ul>
     </article>
@@ -26,6 +26,9 @@
         "use strict";
         let todolist = [];
         let rajout = function(arg) {
+            if (todolist.length > 9) {
+                return;
+            }
             todolist.push(arg);
         };
 

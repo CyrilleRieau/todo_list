@@ -1,11 +1,13 @@
  body {
      display: flex;
      flex-direction: column;
+     background-image: url("star.gif");
  }
  
  h1 {
      padding-left: 10px;
-     color: indigo;
+     color: gold;
+     text-shadow: 2px 2px black;
      font-family: 'Times New Roman', Times, serif;
  }
  
@@ -29,12 +31,13 @@
  }
  
  h2 {
-     font-size: 2em;
+     font-size: 3em;
      padding-left: 10px;
-     color: black;
+     color: red;
+     text-shadow: 2px 1px black;
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
      text-align: center;
-     margin-left: -10%;
+     margin-left: -12%;
  }
  
  ul {
@@ -42,13 +45,14 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     margin-top: 9%;
+     margin-top: 5%;
  }
  
  li {
-     margin: 8px;
+     margin: 7px;
      margin-left: -6%;
      padding: 3px;
-     font-size: 1.25em;
-     color: black;
+     font-size: 1.5em;
+     color: red;
+     text-shadow: 2px 1px black;
  }
